@@ -1,29 +1,54 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <main>
+    <spk-nav-header :elevated="!inTop" />
+    <home-page />
+    <category-page />
+    <about-page />
+    <product-page />
+    <new-page />
+  </main>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Vue, Component } from "vue-property-decorator";
+
+// COMPONENTS
+import SpkNavHeader from "@/components/SpkNavHeader.vue";
+
+// PAGES
+import HomePage from "@/pages/home/HomePage.vue";
+import CategoryPage from "@/pages/category/CategoryPage.vue";
+import AboutPage from "@/pages/about/AboutPage.vue";
+import ProductPage from "@/pages/product/ProductPage.vue";
+import NewPage from "@/pages/new/NewPage.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    SpkNavHeader,
+    HomePage,
+    CategoryPage,
+    AboutPage,
+    ProductPage,
+    NewPage,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private inTop: boolean = true;
+
+  private handleScroll(): void {
+    this.inTop = window.scrollY <= 0;
+  }
+
+  public created(): void {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  public destroyed(): void {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./assets/css/main.css");
 </style>

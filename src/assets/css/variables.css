@@ -1,0 +1,42 @@
+:root {
+  /* WEIGHTS */
+  --text-regular: 400;
+  --text-medium: 500;
+  --text-semi-bold: 600;
+  --text-bold: 700;
+
+  /* LINE HEIGHTS */
+  --text-biggest-line-height: 100%;
+  --text-big-line-height: 120%;
+  
+  /* FONT SIZES */
+  --text-biggest-font-size: 4rem;
+  --text-big-font-size: 2.5rem;
+  --text-medium-font-size: 1.5rem;
+  --text-normal-font-size: 1rem;
+
+  /* FONT FAMILIES */
+  --text-primary-font-family: 'Poppins', sans-serif;
+  --text-secondary-font-family: 'Open Sans', sans-serif;
+
+  /* SPACING */
+  --spacing-biggest: 4rem;
+  --spacing-big: 2rem;
+  --spacing-medium: 1.5rem;
+  --spacing-small: 1rem;
+
+  /* COLORS */
+  --color-primary: hsl(14, 91%, 54%);
+  --color-head-text: hsl(0, 0%, 100%);
+  --color-body-text: hsl(14, 4%, 85%);
+  --color-label-text: hsl(0, 0%, 100%);
+  --color-primary-grad: hsl(104, 28%, 40%);
+  --color-secondary-grad: hsl(58, 28%, 40%);
+  --color-primary-grad-low-opacity: hsl(104, 28%, 40%, 0.8);
+  --color-secondary-grad-low-opacity: hsl(58, 28%, 40%, 0.8);
+  --color-background: linear-gradient(90deg, var(--color-primary-grad) 0%, var(--color-secondary-grad) 100%);
+  --color-background-header: linear-gradient(90deg, var(--color-primary-grad-low-opacity) 0%, var(--color-secondary-grad-low-opacity) 100%);
+
+  /* LAYOUT */
+  --layout-header-height: 80px;
+}
